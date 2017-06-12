@@ -2,6 +2,9 @@ FROM microsoft/dotnet:1.1.1-sdk
 
 WORKDIR /code
 
+ARG PROXY
+ENV $PROXY 
+
 ADD src/Worker /code/src/Worker
 
 RUN dotnet restore -v minimal src/Worker \
