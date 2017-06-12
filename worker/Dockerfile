@@ -3,7 +3,7 @@ FROM microsoft/dotnet:1.1.1-sdk
 WORKDIR /code
 
 ARG PROXY
-ENV $PROXY 
+ENV http_proxy $PROXY 
 
 ADD src/Worker /code/src/Worker
 
