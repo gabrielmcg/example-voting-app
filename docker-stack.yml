@@ -24,7 +24,7 @@ services:
       placement:
         constraints: [node.role == manager]
   vote:
-    image: 10.10.174.28/dev/vote:0.26
+    image: 10.10.174.28/dev/vote:0.$BUILD_NUMBER
     ports:
       - 5000:80
     networks:
@@ -38,7 +38,7 @@ services:
       restart_policy:
         condition: on-failure
   result:
-    image: 10.10.174.28/dev/result:0.26
+    image: 10.10.174.28/dev/result:0.$BUILD_NUMBER
     ports:
       - 5001:80
     networks:
@@ -54,7 +54,7 @@ services:
         condition: on-failure
 
   worker:
-    image: 10.10.174.28/dev/worker:0.26
+    image: 10.10.174.28/dev/worker:0.$BUILD_NUMBER
     networks:
       - frontend
       - backend
